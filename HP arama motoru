@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Harry Potter",
+        "house": "Gryffindor",
+        "role": "Student",
+        "spells": ["Expelliarmus", "Stupefy"]
+    },
+    {
+        "name": "Hermione Granger",
+        "house": "Gryffindor",
+        "role": "Student",
+        "spells": ["Alohomora", "Leviosa"]
+    },
+    {
+        "name": "Ron Weasley",
+        "house": "Gryffindor",
+        "role": "Student",
+        "spells": ["Lumos", "Wingardium Leviosa"]
+    },
+    {
+        "name": "Albus Dumbledore",
+        "house": "Gryffindor",
+        "role": "Headmaster",
+        "spells": ["Fawkes", "Apparition"]
+    },
+    {
+        "name": "Severus Snape",
+        "house": "Slytherin",
+        "role": "Professor",
+        "spells": ["Sectumsempra", "Legilimens"]
+    }
+]
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP Search Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .search-container {
+            margin: 20px;
+        }
+        .result {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search HP characters...">
+        <button onclick="search()">Search</button>
+        <div id="results"></div>
+    </div>
+    <script>
+        const data = [
+            {
+                "name": "Harry Potter",
+                "house": "Gryffindor",
+                "role": "Student",
+                "spells": ["Expelliarmus", "Stupefy"]
+            },
+            {
+                "name": "Hermione Granger",
+                "house": "Gryffindor",
+                "role": "Student",
+                "spells": ["Alohomora", "Leviosa"]
+            },
+            {
+                "name": "Ron Weasley",
+                "house": "Gryffindor",
+                "role": "Student",
+                "spells": ["Lumos", "Wingardium Leviosa"]
+            },
+            {
+                "name": "Albus Dumbledore",
+                "house": "Gryffindor",
+                "role": "Headmaster",
+                "spells": ["Fawkes", "Apparition"]
+            },
+            {
+                "name": "Severus Snape",
+                "house": "Slytherin",
+                "role": "Professor",
+                "spells": ["Sectumsempra", "Legilimens"]
+            }
+        ]
+</html>
+        
