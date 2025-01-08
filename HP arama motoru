@@ -1,33 +1,18 @@
 [
     {
-        "name": "Harry Potter",
-        "house": "Gryffindor",
-        "role": "Student",
-        "spells": ["Expelliarmus", "Stupefy"]
-    },
-    {
-        "name": "Hermione Granger",
-        "house": "Gryffindor",
-        "role": "Student",
-        "spells": ["Alohomora", "Leviosa"]
-    },
-    {
-        "name": "Ron Weasley",
-        "house": "Gryffindor",
-        "role": "Student",
-        "spells": ["Lumos", "Wingardium Leviosa"]
-    },
-    {
-        "name": "Albus Dumbledore",
-        "house": "Gryffindor",
-        "role": "Headmaster",
-        "spells": ["Fawkes", "Apparition"]
-    },
-    {
-        "name": "Severus Snape",
-        "house": "Slytherin",
-        "role": "Professor",
-        "spells": ["Sectumsempra", "Legilimens"]
+      "Harry Potter": "Gryffindor öğrencisi, sağ kalan çocuk ve Voldemort'u yok eden kişi. Annesi ve Babası Voldemort tarafından öldürüldü. İgnotus Peverell ile akraba. Ginny Weasley ile evli. En yakın arkadaşı Ronald Weasley. 3 ölüm yadigarınıda toplayıp ölümün efendisi oldu. 3 büyücü turnuvasının kazananı. Patronusu Çatalboynuzlu Geyik."
+      "Ronald Weasley": "Gryffindor öğrencisi, Harry'nin en yakın arkadaşı, 5 abisi ve bir kız kardeşi var. Hermione ile evli. Annesi Molly Weasley, Babası Arthur Weasley. Safkan."
+      "Hermione Granger": "Gryffindor öğrencisi, Harry'nin en yakın arkadaşı, Muggle'lardan doğma. Çok zeki ve çalışkan. Ronald ile evli. Patronusu bir su samurudur. E.R.İ.T. nin kurucusu D.O.nu kurmayı öneren (ve kuran) kişi."
+      "Dumbledoor": "Hogwarts'ın müdürü, yaşamış en büyük büyücü. Kardeşi Aberforth. Harry'ye, Voldemort'un hortkuluklarını yok etme görevini vereen kişi.
+
+
+
+
+
+
+
+"name": "Harry Potter",
+    
     }
 ]
 
