@@ -33,9 +33,23 @@
             width: 80%;
             padding: 10px;
             margin-top: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+        }
+
+        #searchButton {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #searchButton:hover {
+            background-color: #45a049;
         }
 
         #characterList {
@@ -61,7 +75,8 @@
 
     <div class="container">
         <h1>Harry Potter Karakter Arama Sistemi</h1>
-        <input type="text" id="searchInput" placeholder="Karakter adını girin..." onkeyup="searchCharacter()">
+        <input type="text" id="searchInput" placeholder="Karakter adını girin...">
+        <button id="searchButton" onclick="searchCharacter()">Ara</button>
         <ul id="characterList"></ul>
     </div>
 
@@ -92,4 +107,19 @@
 
         function displayCharacters(filteredCharacters) {
             const characterList = document.getElementById("characterList");
-            characterList.innerHTML = "
+            characterList.innerHTML = ""; // Önceki sonuçları temizle
+
+            if (filteredCharacters.length === 0) {
+                characterList.innerHTML = "<li>Karakter bulunamadı</li>";
+            } else {
+                filteredCharacters.forEach(character => {
+                    const li = document.createElement("li");
+                    li.textContent = character;
+                    characterList.appendChild(li);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
