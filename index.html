@@ -64,10 +64,16 @@
             border-radius: 5px;
             border: 1px solid #ddd;
             transition: background-color 0.3s;
+            text-align: left;
         }
 
         #characterList li:hover {
             background-color: #e0e0e0;
+        }
+
+        .job {
+            font-style: italic;
+            color: #555;
         }
     </style>
 </head>
@@ -82,26 +88,26 @@
 
     <script>
         const characters = [
-            "Harry Potter", 
-            "Hermione Granger", 
-            "Ron Weasley", 
-            "Albus Dumbledore", 
-            "Severus Snape", 
-            "Draco Malfoy", 
-            "Voldemort", 
-            "Minerva McGonagall", 
-            "Rubeus Hagrid", 
-            "Sirius Black",
-            "Ginny Weasley",
-            "Fred Weasley",
-            "George Weasley",
-            "Luna Lovegood",
-            "Neville Longbottom"
+            { name: "Harry Potter", job: "Auror, Hogwarts mezunu" },
+            { name: "Hermione Granger", job: "Hukukçu, Sihir Bakanlığı" },
+            { name: "Ron Weasley", job: "Auror, Sihir Bakanlığı" },
+            { name: "Albus Dumbledore", job: "Hogwarts Müdürü" },
+            { name: "Severus Snape", job: "Hogwarts Profesörü, Kara Büyücü Avcısı" },
+            { name: "Draco Malfoy", job: "Sihirli işadamı" },
+            { name: "Voldemort", job: "Karanlık Lord" },
+            { name: "Minerva McGonagall", job: "Hogwarts Profesörü, Müdür Yardımcısı" },
+            { name: "Rubeus Hagrid", job: "Hogwarts Görevlisi, Canavarlar Profesörü" },
+            { name: "Sirius Black", job: "Auror (eski), Kara Büyücü Avcısı" },
+            { name: "Ginny Weasley", job: "Quidditch oyuncusu, Gazeteci" },
+            { name: "Fred Weasley", job: "Weasley Çiftlikleri, İşletme Sahibi" },
+            { name: "George Weasley", job: "Weasley Çiftlikleri, İşletme Sahibi" },
+            { name: "Luna Lovegood", job: "Gazeteci, Sihirli Yaratıklar Araştırmacısı" },
+            { name: "Neville Longbottom", job: "Hogwarts Profesörü, Sihirli Bahçıvan" }
         ];
 
         function searchCharacter() {
             const searchInput = document.getElementById("searchInput").value.toLowerCase();
-            const filteredCharacters = characters.filter(character => character.toLowerCase().includes(searchInput));
+            const filteredCharacters = characters.filter(character => character.name.toLowerCase().includes(searchInput));
             displayCharacters(filteredCharacters);
         }
 
@@ -114,7 +120,7 @@
             } else {
                 filteredCharacters.forEach(character => {
                     const li = document.createElement("li");
-                    li.textContent = character;
+                    li.innerHTML = `${character.name} <br><span class="job">${character.job}</span>`;
                     characterList.appendChild(li);
                 });
             }
