@@ -1,77 +1,95 @@
-[
-    {
-      "Harry Potter": "Gryffindor öğrencisi, sağ kalan çocuk ve Voldemort'u yok eden kişi. Annesi ve Babası Voldemort tarafından öldürüldü. İgnotus Peverell ile akraba. Ginny Weasley ile evli. En yakın arkadaşı Ronald Weasley. 3 ölüm yadigarınıda toplayıp ölümün efendisi oldu. 3 büyücü turnuvasının kazananı. Patronusu Çatalboynuzlu Geyik."
-      "Ronald Weasley": "Gryffindor öğrencisi, Harry'nin en yakın arkadaşı, 5 abisi ve bir kız kardeşi var. Hermione ile evli. Annesi Molly Weasley, Babası Arthur Weasley. Safkan."
-      "Hermione Granger": "Gryffindor öğrencisi, Harry'nin en yakın arkadaşı, Muggle'lardan doğma. Çok zeki ve çalışkan. Ronald ile evli. Patronusu bir su samurudur. E.R.İ.T. nin kurucusu D.O.nu kurmayı öneren (ve kuran) kişi."
-      "Dumbledoor": "Hogwarts'ın müdürü, yaşamış en büyük büyücü. Kardeşi Aberforth. Harry'ye, Voldemort'un hortkuluklarını yok etme görevini vereen kişi.
-
-
-
-
-
-
-
-"name": "Harry Potter",
-    
-    }
-]
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HP Search Engine</title>
+    <title>Harry Potter Karakter Arama Sistemi</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .search-container {
-            margin: 20px;
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
         }
-        .result {
-            margin: 10px 0;
+
+        h1 {
+            color: #333;
+        }
+
+        #searchInput {
+            width: 80%;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #characterList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #characterList li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s;
+        }
+
+        #characterList li:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Search HP characters...">
-        <button onclick="search()">Search</button>
-        <div id="results"></div>
+
+    <div class="container">
+        <h1>Harry Potter Karakter Arama Sistemi</h1>
+        <input type="text" id="searchInput" placeholder="Karakter adını girin..." onkeyup="searchCharacter()">
+        <ul id="characterList"></ul>
     </div>
+
     <script>
-        const data = [
-            {
-                "name": "Harry Potter",
-                "house": "Gryffindor",
-                "role": "Student",
-                "spells": ["Expelliarmus", "Stupefy"]
-            },
-            {
-                "name": "Hermione Granger",
-                "house": "Gryffindor",
-                "role": "Student",
-                "spells": ["Alohomora", "Leviosa"]
-            },
-            {
-                "name": "Ron Weasley",
-                "house": "Gryffindor",
-                "role": "Student",
-                "spells": ["Lumos", "Wingardium Leviosa"]
-            },
-            {
-                "name": "Albus Dumbledore",
-                "house": "Gryffindor",
-                "role": "Headmaster",
-                "spells": ["Fawkes", "Apparition"]
-            },
-            {
-                "name": "Severus Snape",
-                "house": "Slytherin",
-                "role": "Professor",
-                "spells": ["Sectumsempra", "Legilimens"]
-            }
-        ]
-</html>
-        
+        const characters = [
+            "Harry Potter", 
+            "Hermione Granger", 
+            "Ron Weasley", 
+            "Albus Dumbledore", 
+            "Severus Snape", 
+            "Draco Malfoy", 
+            "Voldemort", 
+            "Minerva McGonagall", 
+            "Rubeus Hagrid", 
+            "Sirius Black",
+            "Ginny Weasley",
+            "Fred Weasley",
+            "George Weasley",
+            "Luna Lovegood",
+            "Neville Longbottom"
+        ];
+
+        function searchCharacter() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const filteredCharacters = characters.filter(character => character.toLowerCase().includes(searchInput));
+            displayCharacters(filteredCharacters);
+        }
+
+        function displayCharacters(filteredCharacters) {
+            const characterList = document.getElementById("characterList");
+            characterList.innerHTML = "
